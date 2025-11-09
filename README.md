@@ -7,11 +7,75 @@ This assignment focuses on building a RESTful API using Express.js, implementing
 You will:
 1. Set up an Express.js server
 2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+3. Implement custom middleware for logging, authen# Express.js RESTful API - Products
 
-## Getting Started
+## Overview
+This project is a RESTful API built using Express.js. It includes CRUD operations, middleware, error handling, filtering, pagination, and search.
+
+---
+
+## Setup
+
+1. Install dependencies:
+
+npm install
+2. Create .env file based on .env.example:
+
+PORT=3000
+API_KEY=your_api_key_here
+3. Run server
+
+npm start
+# API Endpoints
+GET /api/products
+
+Returns all products
+Supports:
+
+category=
+
+search=
+
+page=
+
+limit=
+
+GET /api/products/:id
+
+Returns a single product.
+
+POST /api/products
+
+Requires:
+x-api-key: your_api_key
+# Body:
+
+{
+  "name": "Phone",
+  "description": "Smartphone",
+  "price": 700,
+  "category": "Electronics",
+  "inStock": true
+}
+PUT /api/products/:id
+
+Requires API key.
+
+DELETE /api/products/:id
+
+Requires API key.
+
+# Middleware Included
+
+Logger middleware (method, URL, timestamp)
+
+JSON parser (body-parser)
+
+API key authentication
+
+Validation middleware
+
+Global error handler
 
 1. Accept the GitHub Classroom assignment invitation
 2. Clone your personal repository that was created by GitHub Classroom
